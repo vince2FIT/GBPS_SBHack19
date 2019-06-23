@@ -25,7 +25,7 @@ In particular, we built the following components:
 + Several smart contracts connecting these two applications and providing logic.
 + A decentral private Ethereum logistics blockchain network hosting these smart contracts, which runs on an AWS EC2 instance.
 + As well as a functional hardware box with a self-built smart lock to illustrate further services and think the service end-to-end.
-+ A n-node startup script for Quorum - which unfortunately due to technical problems with the still young protocol - we could not use for the final implementation of the case, but created a rich startup script for.
++ An n-node startup script for Quorum - which unfortunately due to technical problems with the still young protocol - we could not use for the final implementation of the case, but created a rich startup script for.
 
 ### Why Blockchain?
 Blockchain, or - more generally - distributed ledger technology is a vital component in our solution for one main reason: In the complex interorganizational processes in last mile parcel logistics, a jointly used platform can leverage an efficient flow of information and processes and drastically lower the number of necessary standards and agreements. Instead of isolated data management and many bilateral contracts, there is one common platform or one agreed-on standard according to which all services are provided. Until shortly, such a platform on which adherence to specific rules hat to be ensured has not been possible without the service of a trusted, central intermediary.
@@ -39,22 +39,35 @@ In the light of digitization, environmental exigencies as well as new modes of t
 
 The good news is, a wide variety of solutions for many of the challenges outlined before is already available. Companies such as *slock.it* create smart locks for enabling secure access to physical assets (such as parcels), start-ups like *modum.io* enable trustful tracking of critical transports and initiatives like *TradeLens* improve interorganizational shipping processes. The bad news is that these solutions are often based on isolated data silos, monopolist market structures, opacity, interorganizational process inefficiency and difficulties to enter markets sustainably. What is missing is a common infrastructure to connect all these brilliant individual solutions, enabling collaboration and efficient integration.
 
+Our goal is to build the infrastructure for the GBPS, in which we also run a node in order to provide the best possible service. With our exoertise in the architecture, we can then give smaller businesses access to the ecosystem by providing the relevant interfaces.    
+
 >We envision our **Global Blockchain Parcel Standard** to bridge the individual services and thereby create an innovative ecosystem for innovations in the parcel logistics sector. A first step has already been presented with our smart contract standards, smart lock hardware solution and the creation of our private Quorum logistics blockchain in the Hackathon.
 
 ## Set-up Guide
 To test our system, you require nothing more than a web browser and some curiosity.
 
-These are the URLs to our working solution:
+We provide two URLs to our working solution:
 
-`http://18.184.230.21:4200`
-`http://18.184.230.21:8081`
+On the webpage, you can see the mobile-oriented application simulating a ridesharing app. Once someone has planned out their journey, they get an offer for transporting a parcel. If you accept to transport it, you will see how your route adapts:
 
-The first tab that opens brings you to the parcel dispatcher's user interface. You can see all parcels currently out for adoption in a list. You also see basic information about your blockchain account. You can dispatch new parcels for adoption by other networks in the second category of the menu to the left. These are then sent to the blockchain node, which runs on our AWS EC2 instance. They are then open for adoption.
-On the second tab that opens, you can see the mobile-oriented application simulating a ridesharing app. Once someone has planned out their journey, they get an offer for transporting a parcel. If you accept to transport it, you will see how your route adapts!
+http://18.184.230.21:8081
+
+The second link brings you to the parcel dispatcher's user interface. You can see all parcels currently out for adoption in a list. You also see basic information about your blockchain account. You can dispatch new parcels for adoption by other networks in the second category of the menu to the left. These are then sent to the blockchain node, which runs on our AWS EC2 instance. They are then open for adoption. In order to make this app run on a private ethereum chain, some preparations are necessary because ether are needed in order to being able to pay for transactions. With the following steps, you can easily accomplish this:
+
+- add Metamask addon by clicking the following link:
+  --> Firefox: https://addons.mozilla.org/firefox/downloads/file/3038913/metamask-6.6.2-an+fx.xpi?src=dp-btn-primary
+  --> Chrome: https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn
+
+- In the tab which opens right after the installation, choose getStarted, create a Wallet, click no Thanks, choose a password, copy the backup phrase, confirm the secret backup phrase, continue, click the icon next to "main ethereum network", import an account, and import the private key 0xb9d4d09bd540ba68eed8afdd2ed932c5c1cac12e59fbd9f9ba4f61e8635e155a. Afterwards, click on "main ethereum network", "custom rpc" with the config
+   - Network Name: vecon
+   - New RPC URL: http://18.184.230.21:8545
+  and save. Then enter
+
+  http://18.184.230.21:4200.
 
 Of course, if you are interested in the technical details, we would love to see you around our GitHub repository. You can find our code under the following URL:
 
-`https://github.com/vince2FIT/GBPS_SBHack19`
+  https://github.com/vince2FIT/GBPS_SBHack19
 
 The repository should be fairly self-explanatory, but here are some hints nevertheless:
 Our web application for parcel dispatchers is built as an Angular project. The "interesting" folder is called 'Backend'. The main scripts are dashboard.component.ts and ethcontract.service.ts.
@@ -66,5 +79,5 @@ Our main smart contracts as used in the system can be found in the folder called
 ## Key Take-Aways
 + During the hackathon, we built a decentral and open end-to-end system for the integration of non-logistics networks into parcel logistics use cases, such as delivering "hard-to-deliver" parcels on the last-mile.
 + Our vision is that our **Global Blockchain Parcel Standard** bridges individual services related (but not limited) to parcel logistics and thereby creates an innovative ecosystem for innovations in this and other sectors.
-+ Links to our working application: `http://18.184.230.21:4200` and `http://18.184.230.21:8081`
-+ Link to our GitHub repository: `https://github.com/vince2FIT/GBPS_SBHack19`
++ Links to our working application: http://18.184.230.21:4200 and http://18.184.230.21:8081
++ Link to our GitHub repository: https://github.com/vince2FIT/GBPS_SBHack19
