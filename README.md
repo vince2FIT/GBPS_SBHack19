@@ -48,11 +48,11 @@ To test our system, you require nothing more than a web browser and some curiosi
 
 We provide two URLs to our working solution:
 
-On the webpage, you can see the mobile-oriented application simulating a ridesharing app. Once someone has planned out their journey, they get an offer for transporting a parcel. If you accept to transport it, you will see how your route adapts:
+On the first webpage, you can see the mobile-oriented application simulating a ridesharing app. Once someone has planned out their journey, they get an offer for transporting a parcel. If you accept to transport it, you will see how your route adapts:
 
-http://18.184.230.21:8081
+The second link brings you to the parcel dispatcher's user interface. You can see all parcels currently out for adoption in a list. You also see basic information about your blockchain account. You can dispatch new parcels for adoption by other networks in the second category of the menu to the left. These are then sent to the blockchain node, which runs on our AWS EC2 instance. They are then open for adoption.
 
-The second link brings you to the parcel dispatcher's user interface. You can see all parcels currently out for adoption in a list. You also see basic information about your blockchain account. You can dispatch new parcels for adoption by other networks in the second category of the menu to the left. These are then sent to the blockchain node, which runs on our AWS EC2 instance. They are then open for adoption. In order to make this app run on a private ethereum chain, some preparations are necessary because ether are needed in order to being able to pay for transactions. With the following steps, you can easily accomplish this:
+In order to make the apps run on a private ethereum chain, some preparations are necessary because ether are needed in order to being able to pay for transactions. With the following steps, you can easily accomplish this:
 
 - add Metamask addon by clicking the following link:
   --> Firefox: https://addons.mozilla.org/firefox/downloads/file/3038913/metamask-6.6.2-an+fx.xpi?src=dp-btn-primary
@@ -63,7 +63,7 @@ The second link brings you to the parcel dispatcher's user interface. You can se
    - New RPC URL: http://18.184.230.21:8545
   and save. Then enter
 
-  http://18.184.230.21:4200.
+  http://18.184.230.21:8081 and http://18.184.230.21:4200.
 
 Of course, if you are interested in the technical details, we would love to see you around our GitHub repository. You can find our code under the following URL:
 
